@@ -56,9 +56,9 @@ nav a:hover{color:var(--ink);border-color:var(--gold-fill)}
 
 /* stats band */
 .band-out{background:var(--band);margin-left:calc(-1 * max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1 * max(16px,env(safe-area-inset-right,0px)));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;color:var(--band-ink)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;color:var(--band-ink)}
 .stat{padding:34px 24px 34px 0;border-left:1px solid rgba(255,255,255,.14);padding-left:24px}
-.stat:first-child{border-left:0;padding-left:0}
+.stat:nth-child(3n+1){border-left:0;padding-left:0}
 .stat strong{display:block;font-family:var(--display);font-weight:800;font-size:clamp(2rem,4vw,3rem);line-height:1;color:#e0bf7e;font-variant-numeric:tabular-nums}
 .stat span{display:block;margin-top:10px;font-size:.92rem;color:#c8d0df;max-width:16em}
 
@@ -120,7 +120,8 @@ footer{padding:22px 0 26px;font-size:.85rem;color:var(--muted)}
   .hero{grid-template-columns:minmax(0,1fr);gap:36px;padding-top:24px}
   .portrait{order:-1;width:min(70%,280px);justify-self:start;margin-right:18px}
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .stat:nth-child(3){border-left:0;padding-left:0}
+  .stat:nth-child(odd){border-left:0;padding-left:0}
+  .stat:nth-child(even){border-left:1px solid rgba(255,255,255,.14);padding-left:24px}
   .stat{padding-top:26px;padding-bottom:26px}
   .sh,.row,.job{grid-template-columns:minmax(0,1fr);gap:12px}
   .sh{margin-bottom:22px}
@@ -142,8 +143,8 @@ footer{padding:22px 0 26px;font-size:.85rem;color:var(--muted)}
   <div class="hero" id="haut">
     <div>
       <div class="status"><i></i>Disponible immédiatement</div>
-      <h1>Je recrute de A à Z et je fais avancer les <em>projets RH</em>.</h1>
-      <p class="lede"><b>Chargé de recrutement &amp; de projets RH.</b> Plus de 3 ans en startup multi-sites : 30+ recrutements entre la France et l’Inde, un onboarding structuré et une vitrine employeur sur Welcome to the Jungle.</p>
+      <h1>RH &amp; projets : je fais <em>adopter le changement</em>.</h1>
+      <p class="lede"><b>Recrutement &amp; projets RH.</b> Plus de 3 ans en startup multi-sites : 30+ recrutements entre la France et l’Inde, un SIRH adopté par tous les salariés, une vitrine employeur sur Welcome to the Jungle et l’IA au service des RH.</p>
       <div class="cta">
         <a class="btn" href="#contact">Me contacter</a>
         <a class="btn alt" href="https://www.linkedin.com/in/joashraberson/" target="_blank" rel="noopener">Profil LinkedIn</a>
@@ -156,6 +157,8 @@ footer{padding:22px 0 26px;font-size:.85rem;color:var(--muted)}
 
 <div class="band-out">
   <div class="wrap stats" role="list">
+    <div class="stat" role="listitem"><strong>30 → 5 min</strong><span>par jour pour valider les absences avant la paie, depuis le déploiement du SIRH</span></div>
+    <div class="stat" role="listitem"><strong>100+</strong><span>candidatures reçues sur un poste, avec la vitrine employeur</span></div>
     <div class="stat" role="listitem"><strong>30+</strong><span>recrutements menés entre la France et l’Inde</span></div>
     <div class="stat" role="listitem"><strong>3–4 sem.</strong><span>de délai moyen de recrutement</span></div>
     <div class="stat" role="listitem"><strong>&lt;20 → 35</strong><span>salariés : l’effectif de Ficha pendant mon alternance</span></div>
@@ -167,14 +170,15 @@ footer{padding:22px 0 26px;font-size:.85rem;color:var(--muted)}
   <section id="projets">
     <div class="sh">
       <h2>Projets RH</h2>
-      <p>Les réalisations qui montrent comment je travaille : du recrutement à la marque employeur, de l’onboarding à la digitalisation.</p>
+      <p>Les réalisations qui montrent comment je travaille : conduite du changement, marque employeur, IA, recrutement et onboarding.</p>
     </div>
     <div class="proj">
       <article class="row">
         <div><span class="tag">Marque employeur</span><h3>Vitrine employeur Ficha sur Welcome to the Jungle</h3><div class="when">2026 · HR Lead</div></div>
         <ul>
-          <li><b>Coordination de l’ensemble du projet</b>, piloté pendant mon poste de HR Lead.</li>
+          <li><b>Planification et coordination de l’ensemble du projet</b>, piloté pendant mon poste de HR Lead.</li>
           <li><b>Plus de 4 interviews</b> coordonnées, dont celle du CEO.</li>
+          <li><b>100+ candidatures</b> reçues sur un poste, retours très positifs du CEO et de l’équipe, avec des axes d’amélioration identifiés.</li>
           <li>Une vitrine employeur pour Ficha, startup présente à Paris, Grenoble et en Inde.</li>
         </ul>
       </article>
@@ -196,10 +200,26 @@ footer{padding:22px 0 26px;font-size:.85rem;color:var(--muted)}
         </ul>
       </article>
       <article class="row">
-        <div><span class="tag">Digitalisation</span><h3>Déploiement du SIRH MySilae</h3><div class="when">2025 – 2026 · HR Lead</div></div>
+        <div><span class="tag">IA &amp; pilotage RH</span><h3>KPI et documentation RH avec Notion AI</h3><div class="when">2025 – 2026 · HR Lead</div></div>
         <ul>
-          <li>Digitalisation des processus RH pour un <b>gain de temps administratif</b>.</li>
+          <li>Mise en place des <b>KPI RH</b> et de la <b>documentation RH</b> avec Notion AI, avec l’appui du directeur technique.</li>
+          <li>Une bonne maîtrise des outils d’IA générative (ChatGPT, Claude, Notion AI) au service des processus RH.</li>
+        </ul>
+      </article>
+      <article class="row">
+        <div><span class="tag">Conduite du changement</span><h3>Déploiement du SIRH MySilae</h3><div class="when">2025 – 2026 · HR Lead</div></div>
+        <ul>
+          <li>Digitalisation des processus RH et accompagnement des équipes : la validation des absences pour la paie est passée de <b>30 minutes à 5 minutes maximum par jour</b>.</li>
+          <li><b>Adopté par tous les salariés</b>, avec des retours positifs et aucun retour négatif.</li>
           <li>Validation de la paie mensuelle de <b>20 salariés</b> avec le cabinet comptable, contrats, avenants et mutuelle.</li>
+        </ul>
+      </article>
+      <article class="row">
+        <div><span class="tag">Partenariats</span><h3>Écoles, OPCO et entreprises</h3><div class="when">2024 – 2026 · Ficha, Mad Mouv</div></div>
+        <ul>
+          <li><b>Relations avec l’OPCO et plusieurs écoles</b> pour la recherche d’alternants chez Ficha.</li>
+          <li>Mise en relation de <b>100+ étudiants et 5 entreprises</b> lors du forum emploi Mad Mouv.</li>
+          <li>Veille sur le droit du travail et cadre légal du recrutement : protection des données personnelles (RGPD) et non-discrimination.</li>
         </ul>
       </article>
       <article class="row">
@@ -207,6 +227,7 @@ footer{padding:22px 0 26px;font-size:.85rem;color:var(--muted)}
         <ul>
           <li>Responsable de ce projet transversal, avec une <b>équipe de 9 personnes</b> que j’ai constituée et que je dirige.</li>
           <li>Pôles logistique, administration, communication et finance.</li>
+          <li><b>Planning et rétroplanning du projet sur Notion</b>, du cadrage à la réalisation, avec le suivi de l’avancement de l’équipe.</li>
         </ul>
       </article>
       <article class="row">
@@ -236,20 +257,20 @@ footer{padding:22px 0 26px;font-size:.85rem;color:var(--muted)}
     <div class="sh"><h2>Compétences</h2><p>Ce que je maîtrise et ce sur quoi on peut compter.</p></div>
     <div class="skills">
       <div><h3>Savoir-faire</h3>
-        <ul class="chips"><li>Recrutement full-cycle</li><li>Sourcing multicanal</li><li>Entretiens structurés</li><li>Onboarding &amp; offboarding</li><li>Marque employeur</li><li>Administration RH &amp; paie</li><li>Droit social</li><li>Gestion de projets RH transverses</li><li>Animation &amp; teambuilding</li></ul></div>
+        <ul class="chips"><li>Recrutement full-cycle</li><li>Sourcing multicanal</li><li>Entretiens structurés</li><li>Onboarding &amp; offboarding</li><li>Marque employeur</li><li>Administration RH &amp; paie</li><li>Droit social</li><li>Gestion de projets RH transverses</li><li>Gestion de projet : cadrage, planning, déploiement</li><li>Conduite du changement</li><li>IA appliquée aux RH</li><li>Partenariats écoles et OPCO</li><li>Protection des données (RGPD)</li><li>KPI et tableaux de bord</li><li>Animation &amp; teambuilding</li></ul></div>
       <div><h3>Savoir-être</h3>
         <ul class="chips soft"><li>Sens de l’écoute et de la relation</li><li>Autonomie et rigueur</li><li>Adaptabilité et communication</li></ul>
         <h3 style="margin-top:30px">Langues</h3>
         <ul class="chips"><li>Français · langue maternelle</li><li>Anglais · professionnel (Duolingo English Test : 129)</li></ul></div>
       <div style="grid-column:1/-1"><h3>Outils</h3>
-        <ul class="chips"><li>LinkedIn Recruiter</li><li>MySilae (SIRH)</li><li>HubSpot</li><li>Notion</li><li>Pennylane</li><li>Slack</li><li>Excel</li><li>Canva</li><li>Loom</li><li>ChatGPT</li><li>Claude</li></ul></div>
+        <ul class="chips"><li>LinkedIn Recruiter</li><li>MySilae (SIRH)</li><li>HubSpot</li><li>Notion</li><li>Pennylane</li><li>Slack</li><li>Excel</li><li>Canva</li><li>Loom</li><li>ChatGPT</li><li>Claude</li><li>Notion AI</li></ul></div>
     </div>
   </section>
 
   <section>
     <div class="two">
       <div><h3>Formation</h3>
-        <div class="item"><b>Executive MBA Management des Ressources Humaines</b><small>iSCOD · 2023-2025 · Obtenu<br>Mémoire professionnel 15/20 : « Désengagement des salariés &amp; attractivité employeur »</small></div>
+        <div class="item"><b>Executive MBA Management des Ressources Humaines</b><small>iSCOD · 2023-2025 · Obtenu<br>Notes de cadrage et cahiers des charges réalisés en formation<br>Mémoire professionnel 15/20 : « Désengagement des salariés &amp; attractivité employeur »</small></div>
         <div class="item"><b>Licence Droit-Économie-Gestion</b><small>Université Paris 1 Panthéon-Sorbonne · 2020-2023 · Obtenu</small></div>
         <div class="item"><b>Baccalauréat général</b><small>Série ES · mention Bien · 2020 · Obtenu</small></div>
       </div>
@@ -264,10 +285,10 @@ footer{padding:22px 0 26px;font-size:.85rem;color:var(--muted)}
 
 <div class="contact" id="contact">
   <div class="wrap">
-    <h2>Parlons de votre prochain recrutement.</h2>
-    <p>Disponible immédiatement pour un CDD de chargé de recrutement ou de projets RH, partout en Île-de-France. Le plus simple pour me joindre : un message sur LinkedIn.</p>
+    <h2>Parlons de votre prochain projet RH.</h2>
+    <p>Ce qui me motive : rendre service aux personnes, concrètement, par les RH. Disponible pour un CDD de chef de projet RH ou de chargé de mission recrutement, à Paris et en Île-de-France. Le plus simple pour me joindre : un message sur LinkedIn.</p>
     <div class="cgrid">
-      <div class="c"><label>Coordonnées</label><span class="v">Numéro et e-mail dans mon CV, sur demande</span></div>
+      <div class="c"><label>Coordonnées</label><span class="v">Numéro et e-mail dans mon CV</span></div>
       <div class="c"><label>LinkedIn</label><a class="v" href="https://www.linkedin.com/in/joashraberson/" target="_blank" rel="noopener">linkedin.com/in/joashraberson</a></div>
       <div class="c"><label>Localisation</label><span class="v">Chevilly-Larue (94550)</span></div>
     </div>
